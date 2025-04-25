@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Yasmim</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #container {
+      max-width: 600px;
+    }
+
+    button {
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1f4a;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <p id="message">Meu bem, eu queria te pedir muitas desculpas pelo fato de ter acabado te deixando triste hoje. E eu queria pelo menos ter me expressado com palavras melhores ou me explicado melhor.</p>
+    <button id="okBtn">OK</button>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+    const message = document.getElementById('message');
+    const okBtn = document.getElementById('okBtn');
+
+    okBtn.addEventListener('click', () => {
+      message.innerText = `Oi, amor…
+
+Queria muito te pedir desculpa por algumas coisas que a gente conversou. Eu sei que às vezes eu sumo quando tô bravo, triste ou envergonhado… e agora eu entendi que isso te machuca de verdade. Mas juro, nunca é por mal. Às vezes eu sumo porque tô com medo de dizer alguma coisa e acabar te magoando mais, ou porque tô com vergonha e não sei como falar.
+
+Mas eu te amo demais, e não quero mais fazer isso com você. Eu prometo que vou tentar ao máximo não sumir mais. Mesmo que eu esteja bravo, vou lembrar que o nosso amor é muito mais importante do que qualquer briga. Se eu estiver triste, eu vou te contar. E se for vergonha, eu vou dizer que tô com vergonha, mas vou continuar falando com você mesmo assim.
+
+Sobre eu ser meio grosso… também queria te pedir desculpa. Infelizmente, é um costume meu de muito tempo, mas isso não é motivo pra continuar sendo assim com você. Por você, eu quero mudar. De verdade. Quero te tratar como a princesa que você é.
+
+E se algum dia eu for grosso, mesmo que sem querer, por favor, me avisa. Porque só assim eu vou conseguir melhorar e também fazer algo pra compensar, pra te ver sorrindo de novo.
+
+Eu te amo demais, Yasmim. E tô falando tudo isso do fundo do coração.`;
+
+      okBtn.innerText = 'Me perdoa de verdade, você poderia me desculpar?';
+      okBtn.onclick = null;
+
+      const newBtn = document.createElement('button');
+      newBtn.innerText = 'Não sei...';
+      newBtn.style.marginLeft = '10px';
+
+      container.appendChild(newBtn);
+
+      okBtn.addEventListener('click', () => {
+        message.innerText = 'Muito obrigado, meu bem. Eu prometo que quero me transformar na melhor pessoa possível, porque eu sei que você merece o melhor.';
+        okBtn.classList.add('hidden');
+        newBtn.classList.add('hidden');
+      });
+
+      newBtn.addEventListener('click', () => {
+        message.innerText = 'Tudo tem o seu tempo, e eu vou esperar até você querer me perdoar.';
+        okBtn.classList.add('hidden');
+        newBtn.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
